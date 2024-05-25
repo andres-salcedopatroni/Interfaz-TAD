@@ -1,0 +1,144 @@
+/* You can add global styles to this file, and also import other style files */
+body,html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body,html * {
+    margin: 0;
+    padding: 0;
+}
+
+.img-center {
+    height:300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.zoom-in {
+    overflow: hidden;
+    position: relative;
+}
+
+.zoom-in img{
+    transition: all 0.5s ease;
+}
+
+.zoom-in:hover img{
+    transform: scale(1.2);
+}
+
+.card-hover:hover {    
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+    /*transition-delay: 0.1s;*/
+}
+
+.img-border {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.carousel-button {
+    background-color: #838383;
+    height: 20vh;
+    width: 22vh;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-indicators {
+    left: 0;
+    top: auto;
+    bottom: -35px;
+}
+  
+.carousel-indicators .active {
+background-color:#3a3a3a 
+}
+
+.product-category {    
+    position: absolute;
+    font-size: 12cm;
+    background-color: cadetblue;
+    color: white; 
+    margin-left: 8px;
+    margin-top: 10px;
+    padding: 5px;
+    width: auto;    
+}
+
+.product-price-number {
+    font-size: 1.4rem;
+    padding-bottom: 5px;
+}
+
+.product-price-number-blue {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4780a1;
+    padding-bottom: 5px;
+    /*color: #66c0f4;*/
+}
+
+.product-discounted {
+    position: absolute;
+    width: auto;
+    bottom: 4px;
+    right: 4px;
+}
+
+.product-price-discounted {
+    font-size: 1.2rem;
+    color: #838383;
+    text-decoration: line-through;
+    text-decoration-color: #838383;
+}
+
+.product-discount-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color:white;
+    padding: 0px 10px;
+}
+
+.product-discount {
+    position: absolute;
+    width: auto;
+    background-color: #5c940d;
+    top: 85%;
+    right: 0%;
+}
+
+.long-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;  
+}
+
+.white-image {
+    filter: brightness(0) invert(1);
+    width: 22px;
+    height: 22px;
+}
+
+.cart-button {
+    padding-top: 2px;
+    border: none;
+    cursor: pointer;
+    /*width:50px;*/
+}
+
+.cart-tittle{
+    padding-right: 40px;
+}
+
+.delete-item-button {
+    padding-top: 2px;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    bottom: 10px;
+    right: 10px;
+}
