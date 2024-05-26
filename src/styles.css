@@ -166,7 +166,7 @@ background-color:#3a3a3a
 .go-up-button:hover .white-image {
     animation: goUpAnimation 1s infinite;
 }
-/*------------------------*/
+/*----------------------*/
 
 .img-product-view {
     height:450px;
