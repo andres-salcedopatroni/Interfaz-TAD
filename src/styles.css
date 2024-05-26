@@ -19,10 +19,14 @@ body,html * {
 .zoom-in {
     overflow: hidden;
     position: relative;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
 }
 
 .zoom-in img{
     transition: all 0.5s ease;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
 }
 
 .zoom-in:hover img{
@@ -32,6 +36,8 @@ body,html * {
 .card-hover:hover {    
     transform: scale(1.05);
     transition: transform 0.1s ease;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
     /*transition-delay: 0.1s;*/
 }
 
@@ -142,3 +148,63 @@ background-color:#3a3a3a
     bottom: 10px;
     right: 10px;
 }
+
+/*Go up button Animation*/
+@keyframes goUpAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+.go-up-button .white-image {
+    transition: transform 0.2s ease-in-out;
+}
+
+.go-up-button:hover .white-image {
+    animation: goUpAnimation 1s infinite;
+}
+/*------------------------*/
+
+.img-product-view {
+    height:450px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+}
+
+.card-product-view{
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-price-view{
+    padding: 8px;
+    margin: 8px;
+}
+
+.card-price-number-view{
+    font-size: 1.8rem;
+    color: #545758;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.card-price-number-view-blue{
+    font-size: 1.8rem;
+    color: #4780a1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.card-price-number-original-view{
+    font-size: 1.4rem;
+    color: #838383;
+    text-decoration: line-through;
+    text-decoration-color: #838383;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;   
+}
+

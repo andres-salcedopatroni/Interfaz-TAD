@@ -8,9 +8,9 @@
         <div class="container">        
             <div class="carousel-inner">
                 <ng-container *ngFor="let fragmento of itemsFragmentados; let i = index">
-                    <div class="carousel-item" [class.active]="i === 0">
-                        <div class="row mx-1">
-                            <div class="col-sm-4 mt-3 mb-3" *ngFor="let usuario of fragmento">
+                    <div class="carousel-item" [class.active]="i === 0">                        
+                        <div class="row" style="padding-left: 10px; padding-right: 10px;">
+                            <div class="col-4 mt-3 mb-3" *ngFor="let usuario of fragmento">
                                 <div class="card card-hover" (click)="verUsuario(usuario.dni_ruc)">
                                     <img [src]="usuario.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="card-img-top img-center">
                                     <div class="card-body">
@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>                
-                        </div>
+                        </div>                                              
                     </div>
                 </ng-container>         
             </div>        

@@ -65,4 +65,11 @@ export class CarritoComponent {
       this.total = this.total + p.precio;
     }
   }
+
+  irArriba() {
+    const element = document.getElementById('cart-top');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

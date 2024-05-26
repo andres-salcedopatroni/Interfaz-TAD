@@ -1,4 +1,4 @@
-<h1 class="display-4 mt-2">Carrito</h1>
+<h1 class="display-4 mt-2" id="cart-top">Carrito</h1>
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-8">
@@ -63,7 +63,19 @@
                         <img class="white-image" src="https://static-00.iconduck.com/assets.00/trash-bin-icon-511x512-qdc3hjq7.png">                                                                                      
                     </button>
                 </div>
-            </div> 
+            </div>
+
+            <!--Go up (More than 5 items)-->
+            <div class="row d-grid" *ngIf="carrito.obtenerProductos().length > 5">
+                <button class="btn btn-primary rounded-0 go-up-button" (click)="irArriba()">                           
+                    <img class="white-image" src="https://cdn-icons-png.flaticon.com/512/5181/5181212.png">                                                                                      
+                </button>
+            </div>
+
+            <!--No items-->
+            <div class="row" *ngIf="carrito.obtenerProductos().length == 0">
+                <h1 class="display-6 mt-2" id="cart-top">El carrito está vacío.</h1>
+            </div>
         </div>
 
         <!--Total amount-->
