@@ -10,6 +10,7 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class ModificarUsuarioComponent {
   nombre?:string;
+  descripcion?:string;
   dni_ruc?:string;
   tipo?:string;
   clave?:string;
@@ -29,6 +30,7 @@ export class ModificarUsuarioComponent {
     this.celular=this.usuario.celular;
     this.clave=this.usuario.clave;
     this.tipo=this.usuario.tipo;
+    this.descripcion=this.usuario.descripcion;
     this.imagen=this.usuario.imagen;
 
   }
@@ -45,6 +47,7 @@ export class ModificarUsuarioComponent {
           "correo":this.correo,
           "celular":this.celular,
           "dni_ruc":this.dni_ruc,
+          "descripcion":this.descripcion,
           "tipo":this.tipo,
           "imagen":this.imagen,
         }, LoginService.usuarioObtener()
@@ -67,6 +70,7 @@ export class ModificarUsuarioComponent {
         "clave":this.clave,
         "correo":this.correo,
         "celular":this.celular,
+        "descripcion":this.descripcion,
         "dni_ruc":this.dni_ruc,
         "tipo":this.tipo,
         "imagen":"defecto"

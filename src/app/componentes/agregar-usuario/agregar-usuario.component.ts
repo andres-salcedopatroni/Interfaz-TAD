@@ -12,6 +12,7 @@ export class AgregarUsuarioComponent {
 
   nombre?:string;
   dni_ruc?:string;
+  descripcion?:string;
   tipo:string="Empresa";
   clave?:string;
   correo?:string;
@@ -34,6 +35,7 @@ export class AgregarUsuarioComponent {
           "clave":this.clave,
           "correo":this.correo,
           "celular":this.celular,
+          "descripcion":this.descripcion,
           "dni_ruc":this.dni_ruc,
           "tipo":this.tipo,
           "imagen": this.imagen
@@ -55,6 +57,7 @@ export class AgregarUsuarioComponent {
           "clave":this.clave,
           "correo":this.correo,
           "celular":this.celular,
+          "descripcion":this.descripcion,
           "dni_ruc":this.dni_ruc,
           "tipo":this.tipo,
           "imagen": "defecto"
