@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
@@ -16,7 +16,7 @@ export class MiUsuarioComponent {
   misCompras:any;
   misVentas:any;
   productos:any;
-  
+  longText:boolean=false; 
 
   constructor(private servicioUsuario: UsuarioService, private servicioVenta: VentaService, private router:Router, private servicioProducto: ProductoService) { 
     this.servicioVenta.obtenerMisCompras(this.usuario.dni_ruc).subscribe(
@@ -38,6 +38,16 @@ export class MiUsuarioComponent {
       (err)=> {
       }   
     );
+  }
+
+  ngAfterViewInit(){
+    this.comprobarTexto();
+  }
+
+  //Check description's lenght (After resize)
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.comprobarTexto();
   }
 
   modificarUsuario(): void{
@@ -65,4 +75,13 @@ export class MiUsuarioComponent {
       this.router.navigate(['ver-producto/'+codigo_productor+'/'+nombre]);
   }
 
+  //Check description's lenght
+  comprobarTexto(): void{
+    const element = document.getElementById('profileDescription');
+    if(element){
+      const lineHeight = parseInt(window.getComputedStyle(element).lineHeight, 10);
+      const lines = Math.ceil(element.scrollHeight / lineHeight);
+      this.longText = lines > 3;
+    }
+  }
 }
