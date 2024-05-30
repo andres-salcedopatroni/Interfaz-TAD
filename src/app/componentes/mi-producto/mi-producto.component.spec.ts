@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MiProductoComponent } from './mi-producto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MiProductoComponent', () => {
   let component: MiProductoComponent;
@@ -10,7 +11,8 @@ describe('MiProductoComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,  
+        RouterTestingModule 
       ], 
       declarations: [MiProductoComponent]
     });
