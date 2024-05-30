@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModificarProductoComponent } from './modificar-producto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ModificarProductoComponent', () => {
   let component: ModificarProductoComponent;
@@ -11,6 +12,7 @@ describe('ModificarProductoComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,    
+        RouterTestingModule
       ], 
       declarations: [ModificarProductoComponent]
     });
