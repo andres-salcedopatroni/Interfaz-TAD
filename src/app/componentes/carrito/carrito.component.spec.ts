@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CarritoComponent } from './carrito.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CarritoComponent', () => {
   let component: CarritoComponent;
@@ -8,6 +9,9 @@ describe('CarritoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule
+      ], 
       declarations: [CarritoComponent]
     });
     fixture = TestBed.createComponent(CarritoComponent);
