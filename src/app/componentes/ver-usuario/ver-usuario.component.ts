@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarritoService } from 'src/app/servicios/carrito.service';
 import { LoginService } from 'src/app/servicios/login.service';
@@ -15,6 +15,7 @@ export class VerUsuarioComponent {
   usuario:any;
   dni_ruc:any;
   productos:any;
+  longText:boolean=false; 
 
   constructor(private servicioProducto: ProductoService, private servicioUsuario: UsuarioService, private route: ActivatedRoute,  private router:Router){
     this.dni_ruc = this.route.snapshot.paramMap.get('dni_ruc');
@@ -32,6 +33,16 @@ export class VerUsuarioComponent {
       (err)=> {
       }   
     );
+  }
+
+  ngAfterViewInit(){
+    this.comprobarTexto();
+  }
+
+  //Check description's lenght (After resize)
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.comprobarTexto();
   }
 
   verProducto(nombre:any, codigo_productor:any): void {
@@ -52,4 +63,13 @@ export class VerUsuarioComponent {
       return false
   }
 
+  //Check description's lenght
+  comprobarTexto(): void{
+    const element = document.getElementById('profileDescription');
+    if(element){
+      const lineHeight = parseInt(window.getComputedStyle(element).lineHeight, 10);
+      const lines = Math.ceil(element.scrollHeight / lineHeight);
+      this.longText = lines > 3;
+    }
+  }
 }
