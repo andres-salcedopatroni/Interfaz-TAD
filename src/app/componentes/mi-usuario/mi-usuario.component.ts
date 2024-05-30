@@ -19,7 +19,7 @@ export class MiUsuarioComponent {
   longText:boolean=false; 
 
   constructor(private servicioUsuario: UsuarioService, private servicioVenta: VentaService, private router:Router, private servicioProducto: ProductoService) { 
-    this.servicioVenta.obtenerMisCompras(this.usuario.dni_ruc).subscribe(
+    this.servicioVenta.obtenerMisCompras(this.usuario?.dni_ruc).subscribe(
       (data)=> {
         this.misCompras=data;
       },(err)=> {

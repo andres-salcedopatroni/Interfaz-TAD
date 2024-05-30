@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ModificarProductoComponent } from './modificar-producto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('ModificarProductoComponent', () => {
   let component: ModificarProductoComponent;
@@ -12,7 +13,8 @@ describe('ModificarProductoComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,    
-        RouterTestingModule
+        RouterTestingModule,
+        FormsModule
       ], 
       declarations: [ModificarProductoComponent]
     });
