@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModificarUsuarioComponent } from './modificar-usuario.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ModificarUsuarioComponent', () => {
   let component: ModificarUsuarioComponent;
@@ -10,7 +11,8 @@ describe('ModificarUsuarioComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,  
+        RouterTestingModule
       ], 
       declarations: [ModificarUsuarioComponent]
     });
