@@ -70,13 +70,13 @@
         <div class="card-body">
           <div class="row">
             <div class="row">
-              <h5 class="display-6 card-title mb-0">{{usuario.nombre}}</h5>
-              <p>{{usuario.correo}}</p>
+              <h5 class="display-6 card-title mb-0">{{usuario?.nombre}}</h5>
+              <p>{{usuario?.correo}}</p>
             </div>
 
             <div class="row mt-2" *ngIf="usuario.descripcion">
               <div class="card bg-light profile-container">
-                <p class="profile-description mb-1" id="profileDescription">{{usuario.descripcion}}</p>
+                <p class="profile-description mb-1" id="profileDescription">{{usuario?.descripcion}}</p>
                 
                 <!--View full description-->
                 <div class="mb-2" *ngIf="longText">
@@ -97,7 +97,7 @@
                 </div>
   
                 <div class="col bg-light">
-                  <p>{{usuario.celular}}</p>
+                  <p>{{usuario?.celular}}</p>
                 </div>
               </div>
   
@@ -107,7 +107,7 @@
                 </div>
   
                 <div class="col bg-light">
-                  <p>{{usuario.dni_ruc}}</p>
+                  <p>{{usuario?.dni_ruc}}</p>
                 </div>
               </div>
 
@@ -117,7 +117,7 @@
                 </div>
   
                 <div class="col bg-light">
-                  <p>{{usuario.tipo}}</p>
+                  <p>{{usuario?.tipo}}</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@
                 </div>
   
                 <div class="col bg-light">
-                  <p>{{usuario.fecha}}</p>
+                  <p>{{usuario?.fecha}}</p>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img [src]="usuario.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="img-fluid w-100" alt="profilePicture">
+          <img [src]="usuario?.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="img-fluid w-100" alt="profilePicture">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -213,14 +213,14 @@
       </thead>
       <tbody>       
         <tr *ngFor="let producto of productos">          
-            <td>{{producto.nombre}}</td>            
-            <td>{{producto.codigo_productor}}</td>            
-            <td>{{producto.categoria}}</td>            
-            <td>{{producto.precio}}</td>            
-            <td>{{producto.unidad}}</td>            
-            <td>{{producto.descuento}}</td>            
-            <td>{{producto.fecha}}</td>
-            <td><button class="btn btn-primary mr-2" (click)="verProducto(producto.nombre, producto.codigo_productor)">Ver Producto</button></td>            
+            <td>{{producto?.nombre}}</td>            
+            <td>{{producto?.codigo_productor}}</td>            
+            <td>{{producto?.categoria}}</td>            
+            <td>{{producto?.precio}}</td>            
+            <td>{{producto?.unidad}}</td>            
+            <td>{{producto?.descuento}}</td>            
+            <td>{{producto?.fecha}}</td>
+            <td><button class="btn btn-primary mr-2" (click)="verProducto(producto?.nombre, producto?.codigo_productor)">Ver Producto</button></td>            
         </tr>    
       </tbody>
     </table>
@@ -260,11 +260,11 @@
           </thead>
           <tbody>       
             <tr *ngFor="let mv of misVentas">
-                <td>{{mv.nombre_producto}}</td>
-                <td>{{mv.codigo_comprador}}</td>
-                <td>{{mv.cantidad}}</td>
-                <td>{{mv.precio}}</td>
-                <td>{{mv.fecha}}</td>                
+                <td>{{mv?.nombre_producto}}</td>
+                <td>{{mv?.codigo_comprador}}</td>
+                <td>{{mv?.cantidad}}</td>
+                <td>{{mv?.precio}}</td>
+                <td>{{mv?.fecha}}</td>                
             </tr>    
           </tbody>
     </table>
@@ -294,11 +294,11 @@
           </thead>
           <tbody>       
             <tr *ngFor="let mv of misCompras">
-                <td>{{mv.nombre_producto}}</td>
-                <td>{{mv.codigo_productor}}</td>
-                <td>{{mv.cantidad}}</td>
-                <td>{{mv.precio}}</td>
-                <td>{{mv.fecha}}</td>                
+                <td>{{mv?.nombre_producto}}</td>
+                <td>{{mv?.codigo_productor}}</td>
+                <td>{{mv?.cantidad}}</td>
+                <td>{{mv?.precio}}</td>
+                <td>{{mv?.fecha}}</td>                
             </tr>    
           </tbody>
     </table>
