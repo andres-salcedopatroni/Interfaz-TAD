@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrincipalComponent } from './principal.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('PrincipalComponent', () => {
   let component: PrincipalComponent;
@@ -11,6 +12,7 @@ describe('PrincipalComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,    
+        FormsModule
       ], 
       declarations: [PrincipalComponent]
     });
