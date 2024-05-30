@@ -58,11 +58,11 @@
     <div class="row no-gutters">
       <div class="col-12 col-md-5 col-lg-5">
         <div class="d-none d-md-block d-lg-block">
-          <img [src]="usuario.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="profile-picture-large" data-bs-toggle="modal" data-bs-target="#fullImage" alt="profilePicture">
+          <img [src]="usuario?.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="profile-picture-large" data-bs-toggle="modal" data-bs-target="#fullImage" alt="profilePicture">
         </div>
 
         <div class="d-block d-md-none d-lg-none">
-          <img [src]="usuario.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="profile-picture-small" data-bs-toggle="modal" data-bs-target="#fullImage" alt="profilePicture">
+          <img [src]="usuario?.imagen || 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg'" class="profile-picture-small" data-bs-toggle="modal" data-bs-target="#fullImage" alt="profilePicture">
         </div>
       </div>
       
