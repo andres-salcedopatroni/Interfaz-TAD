@@ -25,13 +25,13 @@ export class MiUsuarioComponent {
       },(err)=> {
       }   
     );
-    this.servicioVenta.obtenerMisVentas(this.usuario.dni_ruc).subscribe(
+    this.servicioVenta.obtenerMisVentas(this.usuario?.dni_ruc).subscribe(
       (data)=> {
         this.misVentas=data;
       },(err)=> {
       }   
     )
-    this.servicioProducto.obtenerListaProductos(this.usuario.dni_ruc).subscribe(
+    this.servicioProducto.obtenerListaProductos(this.usuario?.dni_ruc).subscribe(
       (data)=> {
         this.productos=data;
       },
