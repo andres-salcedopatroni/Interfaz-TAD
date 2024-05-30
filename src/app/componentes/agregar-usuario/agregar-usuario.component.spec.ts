@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AgregarUsuarioComponent } from './agregar-usuario.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('AgregarUsuarioComponent', () => {
   let component: AgregarUsuarioComponent;
@@ -10,7 +11,8 @@ describe('AgregarUsuarioComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FormsModule
       ], 
       declarations: [AgregarUsuarioComponent]
     });
