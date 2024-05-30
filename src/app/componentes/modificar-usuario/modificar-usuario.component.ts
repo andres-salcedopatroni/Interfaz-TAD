@@ -24,14 +24,14 @@ export class ModificarUsuarioComponent {
 
   constructor(private servicioUsuario: UsuarioService, private router:Router, private route: ActivatedRoute) {
     this.usuario=LoginService.usuarioObtener();
-    this.dni_ruc=this.usuario.dni_ruc
-    this.nombre=this.usuario.nombre;
-    this.correo=this.usuario.correo;
-    this.celular=this.usuario.celular;
-    this.clave=this.usuario.clave;
-    this.tipo=this.usuario.tipo;
-    this.descripcion=this.usuario.descripcion;
-    this.imagen=this.usuario.imagen;
+    this.dni_ruc=this.usuario?.dni_ruc
+    this.nombre=this.usuario?.nombre;
+    this.correo=this.usuario?.correo;
+    this.celular=this.usuario?.celular;
+    this.clave=this.usuario?.clave;
+    this.tipo=this.usuario?.tipo;
+    this.descripcion=this.usuario?.descripcion;
+    this.imagen=this.usuario?.imagen;
 
   }
 
