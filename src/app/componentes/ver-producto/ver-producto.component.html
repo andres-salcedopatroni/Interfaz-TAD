@@ -2,13 +2,13 @@
     <div class="card">
         <div class="row no-gutters">
             <div class="col-12 col-md-4 col-lg-4">
-                <img [src]="producto.imagen || 'https://www.ludlowjute.com/wp-content/uploads/2023/12/Jute_Reusable.jpg'" class="img-product-view" alt="productPicture">           
+                <img [src]="producto?.imagen || 'https://www.ludlowjute.com/wp-content/uploads/2023/12/Jute_Reusable.jpg'" class="img-product-view" alt="productPicture">           
             </div>            
 
             <div class="col">                
                 <div class="card-body">     
                     <div class="row">
-                        <h5 class="display-6 mt-2">{{producto.nombre}}</h5>                                   
+                        <h5 class="display-6 mt-2">{{producto?.nombre}}</h5>                                   
                     </div>                
                     
                     <hr class="mt-1 mb-3">                            
@@ -16,10 +16,10 @@
                     <div class="row">
                         <div class="col">
                             <div class="card bg-light card-product-view">                         
-                                <p><b>Productor: </b>{{producto.codigo_productor}}</p>
-                                <p><b>Categoría: </b>{{producto.categoria}}</p>
-                                <p><b>Unidad: </b>{{producto.unidad}}</p>
-                                <p><b>Fecha: </b>{{producto.fecha}}</p>
+                                <p><b>Productor: </b>{{producto?.codigo_productor}}</p>
+                                <p><b>Categoría: </b>{{producto?.categoria}}</p>
+                                <p><b>Unidad: </b>{{producto?.unidad}}</p>
+                                <p><b>Fecha: </b>{{producto?.fecha}}</p>
                             </div>                        
                         </div>                    
                             
@@ -29,16 +29,16 @@
 
                                 <div class="row">
                                     <div class="col-auto">
-                                        <p class="card-price-number-view" *ngIf="producto.descuento === '0'">S/. {{producto.precio*(100-producto.descuento)/100 | number : '1.0-2'}}</p>                                                             
-                                        <p class="card-price-number-view-blue" *ngIf="producto.descuento !== '0'">S/. {{producto.precio*(100-producto.descuento)/100 | number : '1.0-2'}}</p>
+                                        <p class="card-price-number-view" *ngIf="producto?.descuento === '0'">S/. {{producto?.precio*(100-producto?.descuento)/100 | number : '1.0-2'}}</p>                                                             
+                                        <p class="card-price-number-view-blue" *ngIf="producto?.descuento !== '0'">S/. {{producto?.precio*(100-producto?.descuento)/100 | number : '1.0-2'}}</p>
                                     </div>
 
-                                    <div class="col px-0 pt-2" *ngIf="producto.descuento !== '0'">
-                                        <span class="badge product-discount-view">-{{producto.descuento}}%</span>
+                                    <div class="col px-0 pt-2" *ngIf="producto?.descuento !== '0'">
+                                        <span class="badge product-discount-view">-{{producto?.descuento}}%</span>
                                     </div>
                                 </div>                               
                             
-                                <p class="card-price-number-original-view" *ngIf="producto.descuento !== '0'">S/. {{producto.precio}}</p>
+                                <p class="card-price-number-original-view" *ngIf="producto?.descuento !== '0'">S/. {{producto?.precio}}</p>
                             </div>                        
                         </div>
                     </div>                  
