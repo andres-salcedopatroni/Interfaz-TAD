@@ -12,7 +12,7 @@ describe('VerProductoComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,  
-        RouterTestingModule,  
+        RouterTestingModule  
       ], 
       declarations: [VerProductoComponent]
     });
