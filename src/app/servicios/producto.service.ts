@@ -16,6 +16,10 @@ export class ProductoService {
     return this.http.get<any>(this.direccion+"/obtener_productos");
   }
 
+  obtenerProductosCategoria(categoria:any):Observable<any>{
+    return this.http.get<any>(this.direccion+"/obtener_productos_categoria/"+categoria);
+  }
+
   obtenerListaProductos(codigo_productor:any):Observable<any>{
     return this.http.get<any>(this.direccion+"/obtener_mis_productos/"+codigo_productor);
   }
