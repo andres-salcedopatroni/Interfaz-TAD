@@ -17,6 +17,7 @@ import { VerUsuarioComponent } from './componentes/ver-usuario/ver-usuario.compo
 import { VerProductoComponent } from './componentes/ver-producto/ver-producto.component';
 import { MiProductoComponent } from './componentes/mi-producto/mi-producto.component';
 import { ModificarProductoComponent } from './componentes/modificar-producto/modificar-producto.component';
+import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ModificarProductoComponent } from './componentes/modificar-producto/mod
     VerUsuarioComponent,
     VerProductoComponent,
     MiProductoComponent,
-    ModificarProductoComponent
+    ModificarProductoComponent,
+    CategoriaProductoComponent
   ],
   imports: [
     BrowserModule,

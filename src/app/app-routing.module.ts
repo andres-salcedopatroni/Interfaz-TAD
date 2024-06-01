@@ -12,6 +12,7 @@ import { VerUsuarioComponent } from './componentes/ver-usuario/ver-usuario.compo
 import { MiProductoComponent } from './componentes/mi-producto/mi-producto.component';
 import { VerProductoComponent } from './componentes/ver-producto/ver-producto.component';
 import { ModificarProductoComponent } from './componentes/modificar-producto/modificar-producto.component';
+import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'modificar-usuario', component: ModificarUsuarioComponent},
   { path: 'modificar-producto/:codigo_productor/:nombre', component: ModificarProductoComponent },
+  { path: 'categoria-producto/:categoria', component: CategoriaProductoComponent },
   { path: '**', component: PrincipalComponent }
 ];
 

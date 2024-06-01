@@ -8,6 +8,7 @@ import { ninguna } from 'src/app/patron-strategy/ninguna.class';
 import { ordenarNombre } from 'src/app/patron-strategy/ordenarNombre.class';
 import { ordenarPrecio } from 'src/app/patron-strategy/ordenarPrecio.class';
 import { CarritoService } from 'src/app/servicios/carrito.service';
+import { DatosService } from 'src/app/servicios/datos.service';
 import { LoginService } from 'src/app/servicios/login.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
@@ -27,6 +28,7 @@ export class PrincipalComponent {
   productosBackUp: any;
   mensajeErrorVisible:boolean=false;
   mensajeError:any;
+  categorias: any = DatosService.categorias() ;
 
   constructor(private servicioUsuario: UsuarioService, private router:Router, private servicioProducto: ProductoService) { 
     this.servicioUsuario.obtenerUsuarios().subscribe(
@@ -128,6 +130,10 @@ export class PrincipalComponent {
       ordenar.setStrategy(new ninguna());
     }
     this.productos = ordenar.orden(this.productos);
+  }
+
+  irCategoria(categoria:any): void {
+    this.router.navigate(['categoria-producto/'+categoria]);
   }
 
 }

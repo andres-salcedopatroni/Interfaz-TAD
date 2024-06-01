@@ -26,6 +26,12 @@
             </div>        
         </div>
 
+        <!--Categorias-->
+        <ng-container *ngFor="let c of categorias">
+            <div>{{c?.urlImagen}}</div>
+            <button (click)="irCategoria(c?.nombre)">{{c?.nombre}}</button>
+        </ng-container>
+
         <button class="carousel-control-prev carousel-button" type="button" data-bs-target="#userCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -109,24 +115,5 @@
     </div>
 </div>
 
-<!--<h1>Productos</h1>
-<div *ngFor="let producto of productos" >
-    <div>Nombre:</div>
-    <div>{{producto.nombre}}</div>
-    <div>Codigo Productor:</div>
-    <div>{{producto.codigo_productor}}</div>
-    <div>Categoria:</div>
-    <div>{{producto.categoria}}</div>
-    <div>Precio:</div>
-    <div>{{producto.precio}}</div>
-    <div>Unidad:</div>
-    <div>{{producto.unidad}}</div>
-    <div>Descuento:</div>
-    <div>{{producto.descuento}}</div>
-    <div>Fecha:</div>
-    <div>{{producto.fecha}}</div>
-    <button (click)="verProducto(producto.nombre, producto.codigo_productor)">Ver Producto</button>
-    <button *ngIf ="usuarioIngreso()" (click)="agregarCarrito(producto)">Agregar al carrito</button>
-</div>-->
 
 
