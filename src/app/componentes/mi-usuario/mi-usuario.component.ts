@@ -42,6 +42,9 @@ export class MiUsuarioComponent {
 
   ngAfterViewInit(){
     this.comprobarTexto();
+    setTimeout(() => {
+      this.comprobarTexto();
+    }, 800);
   }
 
   //Check description's lenght (After resize)

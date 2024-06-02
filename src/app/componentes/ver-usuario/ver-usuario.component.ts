@@ -37,6 +37,9 @@ export class VerUsuarioComponent {
 
   ngAfterViewInit(){
     this.comprobarTexto();
+    setTimeout(() => {
+      this.comprobarTexto();
+    }, 800);
   }
 
   //Check description's lenght (After resize)

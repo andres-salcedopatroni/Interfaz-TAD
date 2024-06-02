@@ -28,7 +28,9 @@ export class PrincipalComponent {
   productosBackUp: any;
   mensajeErrorVisible:boolean=false;
   mensajeError:any;
-  categorias: any = DatosService.categorias() ;
+  categorias: any = DatosService.categorias();
+  largeScreenList:any;
+  smallScreenList:any;
 
   constructor(private servicioUsuario: UsuarioService, private router:Router, private servicioProducto: ProductoService) { 
     this.servicioUsuario.obtenerUsuarios().subscribe(
@@ -56,7 +58,7 @@ export class PrincipalComponent {
           this.servicioProducto.obtenerProducto(producto.nombre,producto.codigo_productor).subscribe(
             (data)=> {
               this.productos.push(data);
-              this.productosBackUp = this.productos; 
+              this.productosBackUp = this.productos;              
             },
             (err)=> {
               this.mensajeErrorVisible=true;
@@ -64,6 +66,8 @@ export class PrincipalComponent {
             }   
           );
         }
+        this.largeScreenList = this.chuckItems(this.categorias, 4);
+        this.smallScreenList = this.chuckItems(this.categorias, 2);
       },
       (err)=> {
         this.mensajeErrorVisible=true;
@@ -97,12 +101,13 @@ export class PrincipalComponent {
       return false
   }
 
-  //Fragmentar usuarios
-  get itemsFragmentados(){
-    const result = [];
-    for (let i = 0; i < this.usuarios.length; i += 3) {
-      result.push(this.usuarios.slice(i, i + 3));
-    }    
+  //Chunk items depending the screen size
+  chuckItems(itemList: any[], split:number){
+    let result = [];
+    for (let i = 0; i < itemList.length; i += split) {
+      result.push(itemList.slice(i, i + split));
+    }
+
     return result;
   }
 

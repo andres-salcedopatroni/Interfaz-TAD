@@ -1,6 +1,6 @@
-<h1 class="display-4 text-center mt-2">Usuarios</h1>
+<!--<h1 class="display-4 text-center mt-2">Usuarios</h1>
 <div class="mt-4">
-    <div id="userCarousel" class="carousel slide" data-bs-ride="carousel">  
+    <div id="userCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">               
             <li *ngFor="let fragmento of itemsFragmentados; let in = index" [class.active]="in === 0" data-bs-target="#userCarousel" [attr.data-bs-slide-to]="in"></li>                       
         </div>
@@ -26,12 +26,6 @@
             </div>        
         </div>
 
-        <!--Categorias-->
-        <ng-container *ngFor="let c of categorias">
-            <div>{{c?.urlImagen}}</div>
-            <button (click)="irCategoria(c?.nombre)">{{c?.nombre}}</button>
-        </ng-container>
-
         <button class="carousel-control-prev carousel-button" type="button" data-bs-target="#userCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -41,9 +35,79 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+</div>-->
+
+<!--Categories-->
+<h1 class="display-4 text-center mt-2">Nuestras categorías</h1>
+<div class="mt-4">
+    <div id="categoryCarouselLarge" class="carousel slide d-none d-md-none d-lg-block ">
+        <!-- For more than four categories-->
+        <!--<div class="carousel-indicators">
+            <li *ngFor="let chunk of largeScreenList; let in = index" [class.active]="in === 0" data-bs-target="#largeScreenList" [attr.data-bs-slide-to]="in"></li>
+        </div>-->
+        
+        <div class="carousel-inner">
+            <ng-container *ngFor="let chunk of largeScreenList; let i = index">
+                <div class="carousel-item" [class.active]="i === 0">                 
+                    <div class="row row-cols-lg-4">
+                        <div class="col" *ngFor="let c of chunk">
+                            <div class="card-category" (click)="irCategoria(c?.nombre)">
+                                <img [src]="c?.imagen || 'https://via.placeholder.com/220x220'" class="category-img">
+                                
+                                <div class="card-category-body">
+                                    <p>{{c?.nombre}}</p>                     
+                                </div>
+                            </div>                    
+                        </div>                
+                    </div>                                              
+                </div>
+            </ng-container>         
+        </div>        
+        
+        <!-- For more than four categories-->
+        <!--<button class="carousel-control-prev carousel-button" type="button" data-bs-target="#categoryCarouselLarge" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next carousel-button" type="button" data-bs-target="#categoryCarouselLarge" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>-->
+    </div>
+
+    <div id="categoryCarouselSmall" class="carousel slide d-block d-md-block d-lg-none">        
+        <div class="carousel-indicators">
+            <li *ngFor="let chunk of smallScreenList; let in = index" [class.active]="in === 0" data-bs-target="#largeScreenList" [attr.data-bs-slide-to]="in"></li>
+        </div>
+
+        <div class="carousel-inner">
+            <ng-container *ngFor="let chunk of smallScreenList; let i = index">
+                <div class="carousel-item" [class.active]="i === 0">                        
+                    <div class="row row-cols-2 row-cols-md-2">
+                        <div class="col" *ngFor="let c of chunk">
+                            <div class="card-category" (click)="irCategoria(c?.nombre)">
+                                <img [src]="c?.imagen || 'https://via.placeholder.com/220x220'" class="category-img">
+                                
+                                <div class="card-category-body">
+                                    <p>{{c?.nombre}}</p>                     
+                                </div>
+                            </div>                    
+                        </div>                   
+                    </div>                                              
+                </div>
+            </ng-container>         
+        </div>
+
+        <button class="carousel-control-prev carousel-button" type="button" data-bs-target="#categoryCarouselSmall" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next carousel-button" type="button" data-bs-target="#categoryCarouselSmall" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </div>
-
-
 
 <h1 class="display-4 text-center mt-5">Productos</h1>
 <div class="container mt-4">
