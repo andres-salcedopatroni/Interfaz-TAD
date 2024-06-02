@@ -13,6 +13,7 @@ export class DatosService {
     c.push({ "nombre": "Higiene", "urlImagen": "imagen"});
     c.push({ "nombre": "Alimento", "urlImagen": "imagen"});
     c.push({ "nombre": "Ropa", "urlImagen": "imagen"});
+    c.push({ "nombre": "Otros", "urlImagen": "imagen"});
     return c;
   }
 }
