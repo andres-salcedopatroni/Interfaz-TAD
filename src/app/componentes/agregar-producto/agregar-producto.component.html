@@ -21,10 +21,7 @@
                 <div class="mb-3">              
                     <select class="form-select" name="category" id="category" [(ngModel)]="categoria">
                         <option value="Categoria" disabled selected>Elige un Categoria...</option>
-                        <option value="Tecnología">Tecnología</option>
-                        <option value="Higiene">Higiene</option>
-                        <option value="Alimento">Alimento</option>
-                        <option value="Ropa">Ropa</option>
+                        <option *ngFor="let c of dato_servicio?.categorias()" [ngValue]="c?.nombre">{{c?.nombre}}</option>
                     </select>
                 </div>
                 <div class="mb-3">

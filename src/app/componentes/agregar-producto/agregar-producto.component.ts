@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatosService } from 'src/app/servicios/datos.service';
 import { LoginService } from 'src/app/servicios/login.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
@@ -12,6 +13,7 @@ export class AgregarProductoComponent {
 
   nombre:any;
   categoria:any = "Tecnología";
+  dato_servicio:any = DatosService;
   precio:any;
   unidad:any;
   descuento:any;

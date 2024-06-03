@@ -22,7 +22,12 @@
                                 <p><b>Fecha: </b>{{producto?.fecha}}</p>
                             </div>                        
                         </div>                    
-                            
+                        <button (click)="verProductor()">Ver productor</button>
+                        <div class="col-3">
+                            <button class="btn btn-primary cart-button" title="Agregar al carrito" *ngIf="usuarioIngreso()" (click)="agregarCarrito()">                           
+                                <img class="white-image" src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Sale-Stickers-PNG/Shopping_Cart_Icon_PNG_Clipart.png?m=1629833029">                                                                                      
+                            </button>
+                        </div>
                         <div class="col">          
                             <div class="card-price-view">
                                 <p><b>Precio </b></p>  

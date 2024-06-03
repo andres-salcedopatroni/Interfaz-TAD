@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DatosService } from 'src/app/servicios/datos.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class ModificarProductoComponent {
   producto_antiguo:any;
   nombre:any;
   codigo_productor:any;
+  dato_servicio:any = DatosService;
   categoria:any;
   precio:any;
   unidad:any;
