@@ -199,6 +199,25 @@ body,html * {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.card-productor-view {
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    text-align: center;
+    color: #4780a1;
+    background-color: #fce0bc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.card-productor-view:hover {
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .card-price-view {
     padding: 8px;
     margin: 8px;
@@ -227,6 +246,11 @@ body,html * {
 .product-discount-view {
     font-size: 1rem;
     background-color: #5c940d;
+}
+
+.product-img-container {
+    position: relative;
+    display: inline-block;
 }
 
 /*mi-usuario*/
@@ -330,4 +354,30 @@ body,html * {
     transition: transform 0.1s ease;
     color: #4780a1;
     font-weight: bold;
+}
+
+.zoom-in-product {
+    position: absolute;
+    cursor: pointer;
+    bottom: 15px;
+    right: 15px;
+}
+
+.zoom-in-button {
+    height: 48px;
+    width: 48px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-in-img {
+    height: 25px;
+    width: 25px;
+}
+
+.zoom-in-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 }

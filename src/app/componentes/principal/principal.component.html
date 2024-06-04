@@ -52,7 +52,7 @@
                     <div class="row row-cols-lg-4">
                         <div class="col" *ngFor="let c of chunk">
                             <div class="card-category" (click)="irCategoria(c?.nombre)">
-                                <img [src]="c?.imagen || 'https://via.placeholder.com/220x220'" class="category-img">
+                                <img [src]="c?.urlImagen || 'https://via.placeholder.com/220x220'" class="category-img">
                                 
                                 <div class="card-category-body">
                                     <p>{{c?.nombre}}</p>                     
@@ -86,7 +86,7 @@
                     <div class="row row-cols-2 row-cols-md-2">
                         <div class="col" *ngFor="let c of chunk">
                             <div class="card-category" (click)="irCategoria(c?.nombre)">
-                                <img [src]="c?.imagen || 'https://via.placeholder.com/220x220'" class="category-img">
+                                <img [src]="c?.urlImagen || 'https://via.placeholder.com/220x220'" class="category-img">
                                 
                                 <div class="card-category-body">
                                     <p>{{c?.nombre}}</p>                     

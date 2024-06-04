@@ -29,18 +29,19 @@ export class VerUsuarioComponent {
     this.servicioProducto.obtenerListaProductos(this.dni_ruc).subscribe(
       (data)=> {
         this.productos=data;
+        this.comprobarTexto();
       },
       (err)=> {
       }   
     );
   }
 
-  ngAfterViewInit(){
+  /*ngAfterViewInit(){
     this.comprobarTexto();
     setTimeout(() => {
       this.comprobarTexto();
     }, 800);
-  }
+  }*/
 
   //Check description's lenght (After resize)
   @HostListener('window:resize', ['$event'])
