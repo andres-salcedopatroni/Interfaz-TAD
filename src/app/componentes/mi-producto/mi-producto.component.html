@@ -2,7 +2,15 @@
     <div class="card">
         <div class="row no-gutters">
             <div class="col-12 col-md-4 col-lg-4">
-                <img [src]="producto?.imagen || 'https://www.ludlowjute.com/wp-content/uploads/2023/12/Jute_Reusable.jpg'" class="img-product-view" alt="productPicture">
+                <div class="product-img-container">
+                    <img [src]="producto?.imagen || 'https://www.ludlowjute.com/wp-content/uploads/2023/12/Jute_Reusable.jpg'" class="img-product-view" data-bs-toggle="modal" data-bs-target="#fullImage" alt="productPicture">
+                    
+                    <div class="zoom-in-product">
+                        <button type="button" class="bg-light zoom-in-button" title="Ver imagen completa" data-bs-toggle="modal" data-bs-target="#fullImage">                       
+                            <img class="zoom-in-img" src="https://static-00.iconduck.com/assets.00/zoom-in-icon-512x512-rmtu584u.png">    
+                        </button>
+                    </div>
+                </div>
             </div>            
 
             <div class="col">                
@@ -15,8 +23,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <div class="card bg-light card-product-view">                         
-                                <p><b>Productor: </b>{{producto?.codigo_productor}}</p>
+                            <div class="card bg-light card-product-view">
                                 <p><b>Categoría: </b>{{producto?.categoria}}</p>
                                 <p><b>Unidad: </b>{{producto?.unidad}}</p>
                                 <p><b>Fecha: </b>{{producto?.fecha}}</p>
@@ -25,7 +32,7 @@
                             
                         <div class="col">          
                             <div class="card-price-view">
-                                <p><b>Precio </b></p>
+                                <p><b>Precio</b></p>
 
                                 <div class="row">
                                     <div class="col-auto">
@@ -52,6 +59,24 @@
                 </div>                
             </div>
         </div>        
+    </div>
+</div>
+
+<!--Full image-->
+<div class="modal fade" id="fullImage" tabindex="-1" aria-labelledby="fullImageLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="fullImageLabel">Imagen del producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img [src]="producto?.imagen || 'https://www.ludlowjute.com/wp-content/uploads/2023/12/Jute_Reusable.jpg'" class="img-fluid w-100" alt="profilePicture">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+        </div>
     </div>
 </div>
 
