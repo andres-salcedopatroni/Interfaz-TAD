@@ -9,6 +9,7 @@ import { ordenarPrecio } from 'src/app/patron-strategy/ordenarPrecio.class';
 import { CarritoService } from 'src/app/servicios/carrito.service';
 import { LoginService } from 'src/app/servicios/login.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
   selector: 'app-categoria-producto',
@@ -17,6 +18,7 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 })
 export class CategoriaProductoComponent {
 
+  categoriaSeleccionada: any;
   categoria: any;
   productos: any = [];
   productosBackUp: any = [];
@@ -25,6 +27,7 @@ export class CategoriaProductoComponent {
 
   constructor(private route: ActivatedRoute, private servicioProducto: ProductoService, private router:Router){
     this.categoria = this.route.snapshot.paramMap.get('categoria');
+    this.categoriaSeleccionada = DatosService.categorias().find((c:any) => c?.nombre === this.categoria);
     this.servicioProducto.obtenerProductosCategoria(this.categoria).subscribe(
       (data)=> {
         for(let producto of data){
