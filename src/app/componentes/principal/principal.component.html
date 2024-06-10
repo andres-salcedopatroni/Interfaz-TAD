@@ -117,11 +117,7 @@
             <select class="form-select" name="category" id="category" [(ngModel)]="categoriaFiltro" (change)="filtrarProductos()">
                 <option value="Categoria" disabled selected>Elige un Categoria...</option>
                 <option value="Todos">Todos</option>
-                <option value="Tecnología">Tecnología</option>
-                <option value="Cuidado Personal">Cuidado Personal</option>
-                <option value="Alimentos">Alimentos</option>
-                <option value="Ropa">Ropa</option>
-                <option value="Artesanías">Artesanías</option>
+                <option *ngFor="let c of dato_servicio?.categorias()" [ngValue]="c?.nombre">{{c?.nombre}}</option>
             </select>
             <div>Menos de: </div>
             <input class="form-control" type="number"[(ngModel)]="precioFiltro" (change)="filtrarProductos()">

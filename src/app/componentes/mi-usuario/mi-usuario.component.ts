@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { RutasService } from 'src/app/servicios/rutas.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { VentaService } from 'src/app/servicios/venta.service';
 
@@ -15,10 +16,12 @@ export class MiUsuarioComponent {
   usuario:any=LoginService.usuarioObtener();
   misCompras:any;
   misVentas:any;
+  rutas_servicio:any;
   productos:any;
   longText:boolean=false; 
 
-  constructor(private servicioUsuario: UsuarioService, private servicioVenta: VentaService, private router:Router, private servicioProducto: ProductoService) { 
+  constructor(private servicioRutas: RutasService, private servicioUsuario: UsuarioService, private servicioVenta: VentaService, private router:Router, private servicioProducto: ProductoService) { 
+    this.rutas_servicio=this.servicioRutas;
     this.servicioVenta.obtenerMisCompras(this.usuario?.dni_ruc).subscribe(
       (data)=> {
         this.misCompras=data;

@@ -29,6 +29,7 @@ export class PrincipalComponent {
   mensajeErrorVisible:boolean=false;
   mensajeError:any;
   categorias: any = DatosService.categorias();
+  dato_servicio:any = DatosService;
   largeScreenList:any;
   smallScreenList:any;
 
