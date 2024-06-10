@@ -148,7 +148,6 @@
       <thead>
         <tr>
           <th>Nombre</th>
-          <th>Codigo Productor</th>
           <th>Categoria</th>
           <th>Precio</th>
           <th>Unidad</th>
@@ -159,8 +158,7 @@
       </thead>
       <tbody>       
         <tr *ngFor="let producto of productos">          
-            <td>{{producto?.nombre}}</td>            
-            <td>{{producto?.codigo_productor}}</td>            
+            <td>{{producto?.nombre}}</td>                     
             <td>{{producto?.categoria}}</td>            
             <td>{{producto?.precio}}</td>            
             <td>{{producto?.unidad}}</td>            
@@ -180,19 +178,21 @@
         <thead>
             <tr>
               <th>Producto</th>
-              <th>Comprador</th>
               <th>Cantidad</th>
               <th>Precio</th> 
               <th>Fecha</th>
+              <th>Acción</th>
             </tr>
           </thead>
           <tbody>       
             <tr *ngFor="let mv of misVentas">
                 <td>{{mv?.nombre_producto}}</td>
-                <td>{{mv?.codigo_comprador}}</td>
                 <td>{{mv?.cantidad}}</td>
                 <td>{{mv?.precio}}</td>
-                <td>{{mv?.fecha}}</td>                
+                <td>{{mv?.fecha}}</td>         
+                <td>
+                  <button class="btn btn-primary mr-2" (click)="rutas_servicio?.irUsuario(mv?.codigo_comprador)">Ver Comprador</button>
+                </td>            
             </tr>    
           </tbody>
     </table>
@@ -214,7 +214,6 @@
         <thead>
             <tr>
               <th>Producto</th>
-              <th>Vendedor</th>
               <th>Cantidad</th>
               <th>Precio</th> 
               <th>Fecha</th>
@@ -224,7 +223,6 @@
           <tbody>       
             <tr *ngFor="let mv of misCompras">
                 <td>{{mv?.nombre_producto}}</td>
-                <td>{{mv?.codigo_productor}}</td>
                 <td>{{mv?.cantidad}}</td>
                 <td>{{mv?.precio}}</td>
                 <td>{{mv?.fecha}}</td> 
