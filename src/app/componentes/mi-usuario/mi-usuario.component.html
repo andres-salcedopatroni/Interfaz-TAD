@@ -226,7 +226,7 @@
                 <td>{{mv?.cantidad}}</td>
                 <td>{{mv?.precio}}</td>
                 <td>{{mv?.fecha}}</td> 
-                <td>
+                <td class="gap-3 d-flex">                  
                   <button class="btn btn-primary mr-2" (click)="verProducto(mv?.nombre_producto, mv?.codigo_productor)">Ver Producto</button>
                   <button class="btn btn-primary mr-2" (click)="rutas_servicio?.irUsuario(mv?.codigo_productor)">Ver Vendedor</button>
                 </td>                    
