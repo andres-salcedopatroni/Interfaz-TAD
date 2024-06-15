@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'app-modificar-usuario',
@@ -43,7 +44,7 @@ export class ModificarUsuarioComponent {
       this.servicioUsuario.actualizarUsuario(
         {
           "nombre":this.nombre,
-          "clave":this.clave,
+          "clave":Md5.hashStr(this.clave+""),
           "correo":this.correo,
           "celular":this.celular,
           "dni_ruc":this.dni_ruc,
@@ -67,7 +68,7 @@ export class ModificarUsuarioComponent {
     this.servicioUsuario.actualizarUsuario(
       {
         "nombre":this.nombre,
-        "clave":this.clave,
+        "clave":Md5.hashStr(this.clave+""),
         "correo":this.correo,
         "celular":this.celular,
         "descripcion":this.descripcion,

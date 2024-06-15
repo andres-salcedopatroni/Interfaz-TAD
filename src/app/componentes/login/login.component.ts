@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
 
   ingresar():void{
     
-    this.servicioUsuario.loggearUsuario(this.correo,this.clave).subscribe(
+    this.servicioUsuario.loggearUsuario(this.correo,Md5.hashStr(this.clave+"")).subscribe(
       (data)=>{
         LoginService.registrar(data);
         this.router.navigate(['mi-usuario']);
