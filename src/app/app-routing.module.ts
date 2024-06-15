@@ -13,6 +13,7 @@ import { MiProductoComponent } from './componentes/mi-producto/mi-producto.compo
 import { VerProductoComponent } from './componentes/ver-producto/ver-producto.component';
 import { ModificarProductoComponent } from './componentes/modificar-producto/modificar-producto.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
+import { authGuard } from './guardia/guardia';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,11 +21,11 @@ const routes: Routes = [
   { path: 'agregar-producto', component: AgregarProductoComponent },
   { path: 'mi-usuario', component: MiUsuarioComponent },
   { path: 'ver-usuario/:dni_ruc', component: VerUsuarioComponent },
-  { path: 'mi-producto/:codigo_productor/:nombre', component: MiProductoComponent },
+  { path: 'mi-producto/:codigo_productor/:nombre', component: MiProductoComponent, canActivate:[authGuard]},
   { path: 'ver-producto/:codigo_productor/:nombre', component: VerProductoComponent },
   { path: 'carrito', component: CarritoComponent },
-  { path: 'modificar-usuario', component: ModificarUsuarioComponent},
-  { path: 'modificar-producto/:codigo_productor/:nombre', component: ModificarProductoComponent },
+  { path: 'modificar-usuario', component: ModificarUsuarioComponent, canActivate:[authGuard]},
+  { path: 'modificar-producto/:codigo_productor/:nombre', component: ModificarProductoComponent, canActivate:[authGuard] },
   { path: 'categoria-producto/:categoria', component: CategoriaProductoComponent },
   { path: '**', component: PrincipalComponent }
 ];
