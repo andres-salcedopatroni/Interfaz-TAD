@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'ver-usuario/:dni_ruc', component: VerUsuarioComponent },
   { path: 'mi-producto/:codigo_productor/:nombre', component: MiProductoComponent, canActivate:[authGuard]},
   { path: 'ver-producto/:codigo_productor/:nombre', component: VerProductoComponent },
-  { path: 'carrito', component: CarritoComponent },
+  { path: 'carrito', component: CarritoComponent, canActivate:[authGuard] },
   { path: 'modificar-usuario', component: ModificarUsuarioComponent, canActivate:[authGuard]},
   { path: 'modificar-producto/:codigo_productor/:nombre', component: ModificarProductoComponent, canActivate:[authGuard] },
   { path: 'categoria-producto/:categoria', component: CategoriaProductoComponent },
