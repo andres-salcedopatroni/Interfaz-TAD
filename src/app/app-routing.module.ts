@@ -18,8 +18,8 @@ import { authGuard } from './guardia/guardia';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'agregar-usuario', component: AgregarUsuarioComponent },
-  { path: 'agregar-producto', component: AgregarProductoComponent },
-  { path: 'mi-usuario', component: MiUsuarioComponent },
+  { path: 'agregar-producto', component: AgregarProductoComponent, canActivate:[authGuard]},
+  { path: 'mi-usuario', component: MiUsuarioComponent, canActivate:[authGuard]},
   { path: 'ver-usuario/:dni_ruc', component: VerUsuarioComponent },
   { path: 'mi-producto/:codigo_productor/:nombre', component: MiProductoComponent, canActivate:[authGuard]},
   { path: 'ver-producto/:codigo_productor/:nombre', component: VerProductoComponent },

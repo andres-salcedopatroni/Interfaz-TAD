@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { io } from "socket.io-client";
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-agregar-usuario',
@@ -32,7 +33,7 @@ export class AgregarUsuarioComponent {
       this.servicioUsuario.registrarUsuario(
         {
           "nombre":this.nombre,
-          "clave":this.clave,
+          "clave":Md5.hashStr(this.clave+""),
           "correo":this.correo,
           "celular":this.celular,
           "descripcion":this.descripcion,
@@ -54,7 +55,7 @@ export class AgregarUsuarioComponent {
       this.servicioUsuario.registrarUsuario(
         {
           "nombre":this.nombre,
-          "clave":this.clave,
+          "clave":Md5.hashStr(this.clave+""),
           "correo":this.correo,
           "celular":this.celular,
           "descripcion":this.descripcion,
