@@ -1,9 +1,11 @@
-<div class="row">
-    <div class="category-img-container">
-        <img [src]="categoriaSeleccionada?.urlImagen || 'https://via.placeholder.com/220x220'" class="category-label">
-        
-        <div class="category-img-name">
-            <p class="display-4">{{categoriaSeleccionada?.nombre}}</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="category-img-container">
+            <img [src]="categoriaSeleccionada?.urlImagen || 'https://via.placeholder.com/220x220'" class="category-label">
+            
+            <div class="category-img-name">
+                <p class="display-4">{{categoriaSeleccionada?.nombre}}</p>
+            </div>
         </div>
     </div>
 </div>

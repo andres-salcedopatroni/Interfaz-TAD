@@ -18,6 +18,7 @@ import { VerProductoComponent } from './componentes/ver-producto/ver-producto.co
 import { MiProductoComponent } from './componentes/mi-producto/mi-producto.component';
 import { ModificarProductoComponent } from './componentes/modificar-producto/modificar-producto.component';
 import { CategoriaProductoComponent } from './componentes/categoria-producto/categoria-producto.component';
+import { ChatbotComponent } from './componentes/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CategoriaProductoComponent } from './componentes/categoria-producto/cat
     VerProductoComponent,
     MiProductoComponent,
     ModificarProductoComponent,
-    CategoriaProductoComponent
+    CategoriaProductoComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,

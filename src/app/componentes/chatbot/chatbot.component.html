@@ -1,0 +1,36 @@
+<div class="collapse chatbot-container" id="chatbot">
+    <div class="chatbot-header chatbot-close" data-bs-toggle="collapse" data-bs-target="#chatbot" aria-expanded="false" aria-controls="chatbot">
+        Cerrar
+        <button type="button" class="btn-close" aria-label="Cerrar"></button>
+    </div>
+
+    <div class="chatbot">
+        <header>
+            <h2>Greenbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <ng-container *ngFor="let m of mensajes,let i = index">
+                <ng-container *ngIf="(i+1)%2 == 0">
+                    <li class="chat outgoing">
+                        <p>{{m}}</p>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="(i+1)%2 != 0">
+                    <li class="chat incoming">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                        <p>{{m}}</p>
+                    </li>
+                </ng-container>
+            </ng-container>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required [(ngModel)]="mensaje"></textarea>
+            <span id="send-btn" class="material-symbols-rounded" (click)="enviar()">send</span>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary chatbot-button" data-bs-toggle="collapse" data-bs-target="#chatbot" aria-expanded="false" aria-controls="chatbot">
+    Abrir Chatbot
+</button>

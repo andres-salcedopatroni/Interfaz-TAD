@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body,html {
+/*body,html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body,html {
 body,html * {
     margin: 0;
     padding: 0;
-}
+}*/
 
 .img-center {
     height:300px;
@@ -387,13 +387,14 @@ body,html * {
 
 .category-img-container {
     position: relative;
-    display: inline-block;
+    display: inline-block;    
     background: #000000;
+    padding: 0px;
 }
 
 .category-label {
     height: 150px;
-    width: 80%;
+    width: 70%;
     object-fit: cover;
     float: right;
 }
@@ -402,7 +403,7 @@ body,html * {
     content: "";
     position: absolute;
     top: 0px;
-    left: 20%;
+    left: 30%;
     bottom: 0px;
     width: 40%;
     background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
@@ -414,7 +415,7 @@ body,html * {
     width: 100%;
     transform: translateY(-50%);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));
-    z-index: 1
+    z-index: 1;
 }
 
 .category-img-name p{
@@ -425,4 +426,25 @@ body,html * {
     font-weight: 300;
     letter-spacing: 2px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.chatbot-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.chatbot-close{
+    position: fixed;
+    bottom: 20px;
+    right: 200px;
+    z-index: 3;
 }
