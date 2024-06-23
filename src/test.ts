@@ -2,7 +2,7 @@
 
 import 'zone.js/testing';
 import { getTestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient , HttpClientModule } from '@angular/common/http';
 import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
