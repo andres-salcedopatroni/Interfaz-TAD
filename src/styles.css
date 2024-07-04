@@ -428,23 +428,9 @@ body,html * {
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.chatbot{
+.chatbot-container{
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 2;
-}
-
-.chatbot-button{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 2;
-}
-
-.chatbot-close{
-    position: fixed;
-    bottom: 20px;
-    right: 200px;
+    bottom: 22px;
+    right: 30px;
     z-index: 2;
 }
